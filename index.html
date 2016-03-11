@@ -228,6 +228,151 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/11/个人博客搭建之Github篇/" itemprop="url">
+                  个人博客搭建之Github篇
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-11T22:34:34+08:00" content="2016-03-11">
+              2016-03-11
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/11/个人博客搭建之Github篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/个人博客搭建之Github篇/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="个人博客搭建之Git篇"><a href="#个人博客搭建之Git篇" class="headerlink" title="个人博客搭建之Git篇"></a>个人博客搭建之Git篇</h1><h6 id="其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github"><a href="#其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github" class="headerlink" title="其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github"></a>其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github</h6><hr>
+<h2 id="1-术语"><a href="#1-术语" class="headerlink" title="1.术语"></a>1.术语</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仓库 Repository</td>
+<td>一个仓库包括了所有的版本信息、所有的分支和标记信息.在Git中仓库的每份拷贝都是完整的。仓库让你可以从中取得你的工作副本。</td>
+</tr>
+<tr>
+<td>分支 Branches</td>
+<td>一个分支意味着一个独立的、拥有自己历史信息的代码线分支（codeline）。你可以从已有的代码中生成一个新的分支，这个分支与剩余的分支完全独立。默认的分支往往是叫master。用户可以选择一个分支，选择一个分支叫做checkout.</td>
+</tr>
+<tr>
+<td>标记 Tags</td>
+<td>一个标记指的是某个分支某个特定时间点的状态。通过标记，可以很方便的切换到标记时的状态，例如2009年1月25号在testing分支上的代码状态</td>
+</tr>
+<tr>
+<td>提交 Commit</td>
+<td>提交代码后，仓库会创建一个新的版本。这个版本可以在后续被重新获得。每次提交都包括作者和提交者，作者和提交者可以是不同的人</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>URl用来标识一个仓库的位置</td>
+</tr>
+<tr>
+<td>修订 Revision</td>
+<td>用来表示代码的一个版本状态。Git通过用SHA1 hash算法表示的id来标识不同的版本。每一个 SHA1 id都是160位长,16进制标识的字符串.最新的版本可以通过HEAD来获取.之前的版本可以通过”HEAD~1”来获取，以此类推。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-忽略特定的文件"><a href="#2-忽略特定的文件" class="headerlink" title="2.忽略特定的文件"></a>2.忽略特定的文件</h2><p>可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。<br>同时Git也提供了全局的配置，core.excludesfile。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*.iml</span><br><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/.idea/workspace.xml</span><br><span class="line">/.idea/libraries</span><br><span class="line">.DS_Store</span><br><span class="line">/build</span><br><span class="line">/captures</span><br></pre></td></tr></table></figure>
+<p>具体的git教程参照<a href="http://blog.csdn.net/lishuo_os_ds/article/details/8078475#sec-1/" target="_blank" rel="external">GitHub详细教程</a></p>
+<h2 id="3-Android-Studio的git功能"><a href="#3-Android-Studio的git功能" class="headerlink" title="3.Android Studio的git功能"></a>3.Android Studio的git功能</h2><h6 id="1-注册github账号"><a href="#1-注册github账号" class="headerlink" title="1.注册github账号"></a>1.注册github账号</h6><p>自行百度 Google</p>
+<h6 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h6><p>地址：<a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a></p>
+<h6 id="2-匹配到AS"><a href="#2-匹配到AS" class="headerlink" title="2.匹配到AS"></a>2.匹配到AS</h6><p>File–&gt;Setting–&gt;Version Control–&gt;Git–&gt;PAth to Git executable:</p>
+<p>注意是Git/bin/git.exe</p>
+<h6 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h6><ol>
+<li>VCS–&gt;enable….–&gt;选择git</li>
+<li>右击工程（注意选到project目录模式）或者VCS–&gt;Git–&gt;add</li>
+<li>Git–&gt;commit Directory–&gt;选择要上传的文件</li>
+<li>输入Commit Message点击Commit</li>
+<li>如果是第一次上传直接push，填写地址，然后输入账号密码就好了</li>
+<li>如果是协同的话记得先pull解决冲突再push</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/07/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -352,7 +497,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

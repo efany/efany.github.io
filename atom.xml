@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-07T13:46:45.666Z</updated>
+  <updated>2016-03-11T14:34:58.531Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人博客搭建之Github篇</title>
+    <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
+    <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
+    <published>2016-03-11T14:34:34.000Z</published>
+    <updated>2016-03-11T14:34:58.531Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h1&gt;&lt;h6 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;a href=&quot;#其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot; class=&quot;headerlink&quot; title=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;/a&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/h6&gt;&lt;hr&gt;
+&lt;h2 id=&quot;1-术语&quot;&gt;&lt;a href=&quot;#1-术语&quot; class=&quot;headerlink&quot; title=&quot;1.术语&quot;&gt;&lt;/a&gt;1.术语&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;术语&lt;/th&gt;
+&lt;th&gt;定义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;仓库 Repository&lt;/td&gt;
+&lt;td&gt;一个仓库包括了所有的版本信息、所有的分支和标记信息.在Git中仓库的每份拷贝都是完整的。仓库让你可以从中取得你的工作副本。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;分支 Branches&lt;/td&gt;
+&lt;td&gt;一个分支意味着一个独立的、拥有自己历史信息的代码线分支（codeline）。你可以从已有的代码中生成一个新的分支，这个分支与剩余的分支完全独立。默认的分支往往是叫master。用户可以选择一个分支，选择一个分支叫做checkout.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;标记 Tags&lt;/td&gt;
+&lt;td&gt;一个标记指的是某个分支某个特定时间点的状态。通过标记，可以很方便的切换到标记时的状态，例如2009年1月25号在testing分支上的代码状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;提交 Commit&lt;/td&gt;
+&lt;td&gt;提交代码后，仓库会创建一个新的版本。这个版本可以在后续被重新获得。每次提交都包括作者和提交者，作者和提交者可以是不同的人&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;URL&lt;/td&gt;
+&lt;td&gt;URl用来标识一个仓库的位置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;修订 Revision&lt;/td&gt;
+&lt;td&gt;用来表示代码的一个版本状态。Git通过用SHA1 hash算法表示的id来标识不同的版本。每一个 SHA1 id都是160位长,16进制标识的字符串.最新的版本可以通过HEAD来获取.之前的版本可以通过”HEAD~1”来获取，以此类推。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;2-忽略特定的文件&quot;&gt;&lt;a href=&quot;#2-忽略特定的文件&quot; class=&quot;headerlink&quot; title=&quot;2.忽略特定的文件&quot;&gt;&lt;/a&gt;2.忽略特定的文件&lt;/h2&gt;&lt;p&gt;可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。&lt;br&gt;同时Git也提供了全局的配置，core.excludesfile。&lt;br&gt;例如：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*.iml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.gradle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/local.properties&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/workspace.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/libraries&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.DS_Store&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/build&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/captures&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;具体的git教程参照&lt;a href=&quot;http://blog.csdn.net/lishuo_os_ds/article/details/8078475#sec-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub详细教程&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-Android-Studio的git功能&quot;&gt;&lt;a href=&quot;#3-Android-Studio的git功能&quot; class=&quot;headerlink&quot; title=&quot;3.Android Studio的git功能&quot;&gt;&lt;/a&gt;3.Android Studio的git功能&lt;/h2&gt;&lt;h6 id=&quot;1-注册github账号&quot;&gt;&lt;a href=&quot;#1-注册github账号&quot; class=&quot;headerlink&quot; title=&quot;1.注册github账号&quot;&gt;&lt;/a&gt;1.注册github账号&lt;/h6&gt;&lt;p&gt;自行百度 Google&lt;/p&gt;
+&lt;h6 id=&quot;1-下载安装git&quot;&gt;&lt;a href=&quot;#1-下载安装git&quot; class=&quot;headerlink&quot; title=&quot;1.下载安装git&quot;&gt;&lt;/a&gt;1.下载安装git&lt;/h6&gt;&lt;p&gt;地址：&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
+&lt;h6 id=&quot;2-匹配到AS&quot;&gt;&lt;a href=&quot;#2-匹配到AS&quot; class=&quot;headerlink&quot; title=&quot;2.匹配到AS&quot;&gt;&lt;/a&gt;2.匹配到AS&lt;/h6&gt;&lt;p&gt;File–&amp;gt;Setting–&amp;gt;Version Control–&amp;gt;Git–&amp;gt;PAth to Git executable:&lt;/p&gt;
+&lt;p&gt;注意是Git/bin/git.exe&lt;/p&gt;
+&lt;h6 id=&quot;3-使用&quot;&gt;&lt;a href=&quot;#3-使用&quot; class=&quot;headerlink&quot; title=&quot;3.使用&quot;&gt;&lt;/a&gt;3.使用&lt;/h6&gt;&lt;ol&gt;
+&lt;li&gt;VCS–&amp;gt;enable….–&amp;gt;选择git&lt;/li&gt;
+&lt;li&gt;右击工程（注意选到project目录模式）或者VCS–&amp;gt;Git–&amp;gt;add&lt;/li&gt;
+&lt;li&gt;Git–&amp;gt;commit Directory–&amp;gt;选择要上传的文件&lt;/li&gt;
+&lt;li&gt;输入Commit Message点击Commit&lt;/li&gt;
+&lt;li&gt;如果是第一次上传直接push，填写地址，然后输入账号密码就好了&lt;/li&gt;
+&lt;li&gt;如果是协同的话记得先pull解决冲突再push&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h1&gt;&lt;h6 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
