@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-12T13:32:44.560Z</updated>
+  <updated>2016-03-12T13:40:30.895Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
     <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
     <published>2016-03-11T14:34:34.000Z</published>
-    <updated>2016-03-12T13:32:44.560Z</updated>
+    <updated>2016-03-12T13:40:30.895Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h2&gt;&lt;h2 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;a href=&quot;#其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot; class=&quot;headerlink&quot; title=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;/a&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/h2&gt;&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
+    <content type="html">&lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/p&gt;
+&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;术语&lt;/th&gt;
@@ -75,7 +76,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h2&gt;&lt;h2 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号
+      &lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/p&gt;
+&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
     
     </summary>
     
