@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-11T14:34:58.531Z</updated>
+  <updated>2016-03-12T13:32:44.560Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
     <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
     <published>2016-03-11T14:34:34.000Z</published>
-    <updated>2016-03-11T14:34:58.531Z</updated>
+    <updated>2016-03-12T13:32:44.560Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h1&gt;&lt;h6 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;a href=&quot;#其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot; class=&quot;headerlink&quot; title=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;/a&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/h6&gt;&lt;hr&gt;
-&lt;h2 id=&quot;1-术语&quot;&gt;&lt;a href=&quot;#1-术语&quot; class=&quot;headerlink&quot; title=&quot;1.术语&quot;&gt;&lt;/a&gt;1.术语&lt;/h2&gt;&lt;table&gt;
+    <content type="html">&lt;h2 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h2&gt;&lt;h2 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;a href=&quot;#其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot; class=&quot;headerlink&quot; title=&quot;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&quot;&gt;&lt;/a&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/h2&gt;&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;术语&lt;/th&gt;
@@ -57,10 +56,10 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&quot;2-忽略特定的文件&quot;&gt;&lt;a href=&quot;#2-忽略特定的文件&quot; class=&quot;headerlink&quot; title=&quot;2.忽略特定的文件&quot;&gt;&lt;/a&gt;2.忽略特定的文件&lt;/h2&gt;&lt;p&gt;可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。&lt;br&gt;同时Git也提供了全局的配置，core.excludesfile。&lt;br&gt;例如：&lt;/p&gt;
+&lt;h2 id=&quot;忽略特定的文件&quot;&gt;&lt;a href=&quot;#忽略特定的文件&quot; class=&quot;headerlink&quot; title=&quot;忽略特定的文件&quot;&gt;&lt;/a&gt;忽略特定的文件&lt;/h2&gt;&lt;p&gt;可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。&lt;br&gt;同时Git也提供了全局的配置，core.excludesfile。&lt;br&gt;例如：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*.iml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.gradle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/local.properties&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/workspace.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/libraries&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.DS_Store&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/build&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/captures&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;具体的git教程参照&lt;a href=&quot;http://blog.csdn.net/lishuo_os_ds/article/details/8078475#sec-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub详细教程&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;3-Android-Studio的git功能&quot;&gt;&lt;a href=&quot;#3-Android-Studio的git功能&quot; class=&quot;headerlink&quot; title=&quot;3.Android Studio的git功能&quot;&gt;&lt;/a&gt;3.Android Studio的git功能&lt;/h2&gt;&lt;h6 id=&quot;1-注册github账号&quot;&gt;&lt;a href=&quot;#1-注册github账号&quot; class=&quot;headerlink&quot; title=&quot;1.注册github账号&quot;&gt;&lt;/a&gt;1.注册github账号&lt;/h6&gt;&lt;p&gt;自行百度 Google&lt;/p&gt;
+&lt;h2 id=&quot;Android-Studio的git功能&quot;&gt;&lt;a href=&quot;#Android-Studio的git功能&quot; class=&quot;headerlink&quot; title=&quot;Android Studio的git功能&quot;&gt;&lt;/a&gt;Android Studio的git功能&lt;/h2&gt;&lt;h6 id=&quot;1-注册github账号&quot;&gt;&lt;a href=&quot;#1-注册github账号&quot; class=&quot;headerlink&quot; title=&quot;1.注册github账号&quot;&gt;&lt;/a&gt;1.注册github账号&lt;/h6&gt;&lt;p&gt;自行百度 Google&lt;/p&gt;
 &lt;h6 id=&quot;1-下载安装git&quot;&gt;&lt;a href=&quot;#1-下载安装git&quot; class=&quot;headerlink&quot; title=&quot;1.下载安装git&quot;&gt;&lt;/a&gt;1.下载安装git&lt;/h6&gt;&lt;p&gt;地址：&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
 &lt;h6 id=&quot;2-匹配到AS&quot;&gt;&lt;a href=&quot;#2-匹配到AS&quot; class=&quot;headerlink&quot; title=&quot;2.匹配到AS&quot;&gt;&lt;/a&gt;2.匹配到AS&lt;/h6&gt;&lt;p&gt;File–&amp;gt;Setting–&amp;gt;Version Control–&amp;gt;Git–&amp;gt;PAth to Git executable:&lt;/p&gt;
 &lt;p&gt;注意是Git/bin/git.exe&lt;/p&gt;
@@ -76,34 +75,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h1&gt;&lt;h6 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/03/07/hello-world/"/>
-    <id>http://yoursite.com/2016/03/07/hello-world/</id>
-    <published>2016-03-07T13:46:45.666Z</published>
-    <updated>2016-03-07T13:46:45.666Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;h2 id=&quot;个人博客搭建之Git篇&quot;&gt;&lt;a href=&quot;#个人博客搭建之Git篇&quot; class=&quot;headerlink&quot; title=&quot;个人博客搭建之Git篇&quot;&gt;&lt;/a&gt;个人博客搭建之Git篇&lt;/h2&gt;&lt;h2 id=&quot;其实搭建博客和git没什么太大关系，只要有github账号
     
     </summary>
     
