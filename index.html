@@ -228,8 +228,106 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/13/Android面试题学习笔记/" itemprop="url">
-                  Android面试题学习笔记
+                <a class="post-title-link" href="/2016/03/14/面试题J2SE学习笔记/" itemprop="url">
+                  面试题J2SE学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-14T02:16:58+08:00" content="2016-03-14">
+              2016-03-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/14/面试题J2SE学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/面试题J2SE学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这篇博文主要是关于面试中常见的J2SE题的学习笔记，哎，这一部分是我比较薄弱的地方了，不过这些知识点对于开发尤其重要，好好学习，增强自身实力，嘿嘿。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/14/面试题J2SE学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/13/面试题Android学习笔记/" itemprop="url">
+                  面试题Android学习笔记
                 </a>
               
             
@@ -253,8 +351,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/13/Android面试题学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/Android面试题学习笔记/" itemprop="commentsCount"></span>
+                <a href="/2016/03/13/面试题Android学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/面试题Android学习笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -277,22 +375,12 @@
 
       
         
-          
-            <p>这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。</p>
-<h4 id="Android的消息机制"><a href="#Android的消息机制" class="headerlink" title="Android的消息机制"></a>Android的消息机制</h4><hr>
-<h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个ThreadLocal的用法。</p>
-<h5 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h5><p>A Handler allows you to send and process Message and Runnable objects associated with a thread’s MessageQueue. Each Handler instance is associated with a single thread and that thread’s message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it – from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.</p>
-<p>There are two main uses for a Handler: (1) to schedule messages and runnables to be executed as some point in the future; and (2) to enqueue an action to be performed on a different thread than your own.</p>
-<p>Handler的主要是发送（send）和接收消息（Message）与发送（post）和接收Runable，其实就是都是对于Message的操作，因为post（Runable）时也是实现了发送了一条Callback为Runable的Message来实现的。</p>
-<p>handler的send和post方法都是向消息队列（MessageQueue）插入了一条消息（Message），然后MessageQueue的next方法就返回这条消息给Looper，Looper收到消息后交给Handler处理。</p>
-<h5 id="Message与MessageQueue"><a href="#Message与MessageQueue" class="headerlink" title="Message与MessageQueue"></a>Message与MessageQueue</h5><p>Message是线程之间传递信息的载体，包含了对消息的描述和任意的数据对象。Message中包含了两个额外的 int字段和一个object字段，这样在大部分情况下，使用者就不需要再做内存分配工作了。虽然Message的构造函数是public的，但是最好是使用Message.obtain( )或Handler.obtainMessage( )函数来获取Message对象，因为Message的实现中包含了回收再利用的机制，可以提供效率。</p>
-<p>MessageQueue是指消息队列，是一个单链表，因为方便插入与读取，插入和读取对应的方法是enqueueMessage和next，其中next是一个无限循环，如果队列中没有消息，那么next机会阻塞在哪里，当有新消息就返回消息并且从队列中移除。</p>
-<h5 id="Looper"><a href="#Looper" class="headerlink" title="Looper"></a>Looper</h5><p>Looper实现的事消息循环的功能，会不停的查看MessageQueue中是否有新消息，如果有新消息就立刻处理。Handler的工作必须有Looper，使用Looper.prepare()可以为线程创建一个Looper，接着使用Looper.loop()来开启消息循环。在ActivityThread中默认执行了prepareMainLooper()方法，</p>
-<h5 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h5><p>Implements a thread-local storage, that is, a variable for which each thread has its own value. All threads share the same ThreadLocal object, but each sees a different value when accessing it, and changes made by one thread do not affect the other threads. The implementation supports null values.</p>
-<p>ThreadLocal是一个线程内部的数据存储类，它存在的意义就在于如果没有这样一个类，那么多个线程同时访问一个数据就可能出现不可预料的情况，相对于锁机制的时间换空间,ThreadLocal相当于空间换时间，有其优势。</p>
-<p>ThreadLocal实现原理就是对于每一个数据建立了一个Object[]   table数组，每次存放读取都是操作线程相对应的数据。</p>
-
-          
+          <p>这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/13/面试题Android学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -385,59 +473,12 @@
 
       
         
-          
-            <p>其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github</p>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><table>
-<thead>
-<tr>
-<th>术语</th>
-<th>定义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>仓库 Repository</td>
-<td>一个仓库包括了所有的版本信息、所有的分支和标记信息.在Git中仓库的每份拷贝都是完整的。仓库让你可以从中取得你的工作副本。</td>
-</tr>
-<tr>
-<td>分支 Branches</td>
-<td>一个分支意味着一个独立的、拥有自己历史信息的代码线分支（codeline）。你可以从已有的代码中生成一个新的分支，这个分支与剩余的分支完全独立。默认的分支往往是叫master。用户可以选择一个分支，选择一个分支叫做checkout.</td>
-</tr>
-<tr>
-<td>标记 Tags</td>
-<td>一个标记指的是某个分支某个特定时间点的状态。通过标记，可以很方便的切换到标记时的状态，例如2009年1月25号在testing分支上的代码状态</td>
-</tr>
-<tr>
-<td>提交 Commit</td>
-<td>提交代码后，仓库会创建一个新的版本。这个版本可以在后续被重新获得。每次提交都包括作者和提交者，作者和提交者可以是不同的人</td>
-</tr>
-<tr>
-<td>URL</td>
-<td>URl用来标识一个仓库的位置</td>
-</tr>
-<tr>
-<td>修订 Revision</td>
-<td>用来表示代码的一个版本状态。Git通过用SHA1 hash算法表示的id来标识不同的版本。每一个 SHA1 id都是160位长,16进制标识的字符串.最新的版本可以通过HEAD来获取.之前的版本可以通过”HEAD~1”来获取，以此类推。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="忽略特定的文件"><a href="#忽略特定的文件" class="headerlink" title="忽略特定的文件"></a>忽略特定的文件</h2><p>可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。<br>同时Git也提供了全局的配置，core.excludesfile。<br>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*.iml</span><br><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/.idea/workspace.xml</span><br><span class="line">/.idea/libraries</span><br><span class="line">.DS_Store</span><br><span class="line">/build</span><br><span class="line">/captures</span><br></pre></td></tr></table></figure>
-<p>具体的git教程参照<a href="http://blog.csdn.net/lishuo_os_ds/article/details/8078475#sec-1/" target="_blank" rel="external">GitHub详细教程</a></p>
-<h2 id="Android-Studio的git功能"><a href="#Android-Studio的git功能" class="headerlink" title="Android Studio的git功能"></a>Android Studio的git功能</h2><h6 id="1-注册github账号"><a href="#1-注册github账号" class="headerlink" title="1.注册github账号"></a>1.注册github账号</h6><p>自行百度 Google</p>
-<h6 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h6><p>地址：<a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a></p>
-<h6 id="2-匹配到AS"><a href="#2-匹配到AS" class="headerlink" title="2.匹配到AS"></a>2.匹配到AS</h6><p>File–&gt;Setting–&gt;Version Control–&gt;Git–&gt;PAth to Git executable:</p>
-<p>注意是Git/bin/git.exe</p>
-<h6 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h6><ol>
-<li>VCS–&gt;enable….–&gt;选择git</li>
-<li>右击工程（注意选到project目录模式）或者VCS–&gt;Git–&gt;add</li>
-<li>Git–&gt;commit Directory–&gt;选择要上传的文件</li>
-<li>输入Commit Message点击Commit</li>
-<li>如果是第一次上传直接push，填写地址，然后输入账号密码就好了</li>
-<li>如果是协同的话记得先pull解决冲突再push</li>
-</ol>
-
-          
+          <p>其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/11/个人博客搭建之Github篇/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -501,7 +542,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

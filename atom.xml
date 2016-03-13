@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-13T09:32:42.060Z</updated>
+  <updated>2016-03-13T18:17:02.643Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,169 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Android面试题学习笔记</title>
-    <link href="http://yoursite.com/2016/03/13/Android%E9%9D%A2%E8%AF%95%E9%A2%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2016/03/13/Android面试题学习笔记/</id>
+    <title>面试题J2SE学习笔记</title>
+    <link href="http://yoursite.com/2016/03/14/%E9%9D%A2%E8%AF%95%E9%A2%98J2SE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/03/14/面试题J2SE学习笔记/</id>
+    <published>2016-03-13T18:16:58.000Z</published>
+    <updated>2016-03-13T18:17:02.643Z</updated>
+    
+    <content type="html">&lt;p&gt;这篇博文主要是关于面试中常见的J2SE题的学习笔记，哎，这一部分是我比较薄弱的地方了，不过这些知识点对于开发尤其重要，好好学习，增强自身实力，嘿嘿。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;1-九种基本数据类型的大小，以及他们的封装类。&quot;&gt;&lt;a href=&quot;#1-九种基本数据类型的大小，以及他们的封装类。&quot; class=&quot;headerlink&quot; title=&quot;1.九种基本数据类型的大小，以及他们的封装类。&quot;&gt;&lt;/a&gt;1.九种基本数据类型的大小，以及他们的封装类。&lt;/h4&gt;&lt;p&gt;基本数据类型可以分为四类，字符类型char，布尔类型boolean，空类型void以及数值类型byte、short、int、long、float、double。数值类型又可以分为整数类型byte、short、int、long和浮点数类型float、double。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;简单类型&lt;/th&gt;
+&lt;th&gt;位数&lt;/th&gt;
+&lt;th&gt;表示范围&lt;/th&gt;
+&lt;th&gt;封装类&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;void&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;–&lt;/td&gt;
+&lt;td&gt;Void&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;byte&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;-128~127&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;true/false&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;char&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;存储Unicode码&lt;/td&gt;
+&lt;td&gt;Character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;short&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;-32768~32767&lt;/td&gt;
+&lt;td&gt;Short&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Int&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;负的2的31次方到正的2的31次方减1&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;long&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;负的2的63次方到正的2的63次方减1&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;1.4E-45~3.4028235E38&lt;/td&gt;
+&lt;td&gt;Float&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;double&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;4.9e-324~1.8e308&lt;/td&gt;
+&lt;td&gt;Double&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;2-Switch能否用string做参数&quot;&gt;&lt;a href=&quot;#2-Switch能否用string做参数&quot; class=&quot;headerlink&quot; title=&quot;2.Switch能否用string做参数&quot;&gt;&lt;/a&gt;2.Switch能否用string做参数&lt;/h4&gt;&lt;p&gt;在java7之前switch只支持byte、short、char、int、integer、enum枚举类型，java7后switch支持String作为参数了。&lt;/p&gt;
+&lt;h4 id=&quot;3-equals与-的区别。&quot;&gt;&lt;a href=&quot;#3-equals与-的区别。&quot; class=&quot;headerlink&quot; title=&quot;3.equals与==的区别。&quot;&gt;&lt;/a&gt;3.equals与==的区别。&lt;/h4&gt;&lt;p&gt;==比较的是两个数据的内存地址是否相同，equals比较的是两个数据的内存地址存储的值是否相同。对于基本类型两者效果一样，但是对于对象就不同了。&lt;/p&gt;
+&lt;h4 id=&quot;5-Object有哪些公用方法？&quot;&gt;&lt;a href=&quot;#5-Object有哪些公用方法？&quot; class=&quot;headerlink&quot; title=&quot;5.Object有哪些公用方法？&quot;&gt;&lt;/a&gt;5.Object有哪些公用方法？&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法&lt;/th&gt;
+&lt;th&gt;用途&lt;/th&gt;
+&lt;th&gt;简介&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;public final Class&amp;lt;? extends Object&amp;gt; getClass()&lt;/td&gt;
+&lt;td&gt;Returns the runtime class of this. The returned object is the object that is locked by {@code  static synchronized} methods of the represented class.&lt;/td&gt;
+&lt;td&gt;返回一个对象的运行时类。该 Class 对象是由所表示类的 static synchronized 方法锁定的对象。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;protected Object clone()&lt;/td&gt;
+&lt;td&gt;Creates and returns a copy of this object.&lt;/td&gt;
+&lt;td&gt;首先，使用这个方法的类必须实现java.lang.Cloneable接口，否则会抛出CloneNotSupportedException异常。Cloneable接口中不包含任何方法，所以实现它时只要在类声明中加上implements语句即可。第二个比较特殊的地方在于这个方法是protected修饰的，覆写clone()方法的时候需要写成public，才能让类外部的代码调用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public boolean equals(Object obj)&lt;/td&gt;
+&lt;td&gt;Indicates whether some other object is “equal to” this one.&lt;/td&gt;
+&lt;td&gt;　对于Object类的equals()方法来说，它判断调用equals()方法的引用于传进来的引用是否一致，即这两个引用是否指向的是同一个对象。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public int hashCode()&lt;/td&gt;
+&lt;td&gt;Returns a hash code value for the object.&lt;/td&gt;
+&lt;td&gt;当你覆写（override）了equals()方法之后，必须也覆写hashCode()方法，反之亦然。这个方法返回一个整型值（hash code value），如果两个对象被equals()方法判断为相等，那么它们就应该拥有同样的hash code。Object类的hashCode()方法为不同的对象返回不同的值，Object类的hashCode值表示的是对象的地址。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public String toString()&lt;/td&gt;
+&lt;td&gt;　Returns a string representation of the object.&lt;/td&gt;
+&lt;td&gt;当打印引用，如调用System.out.println()时，会自动调用对象的toString()方法，打印出引用所指的对象的toString()方法的返回值，因为每个类都直接或间接地继承自Object，因此每个类都有toString()方法。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void notify()&lt;/td&gt;
+&lt;td&gt;Wakes up a single thread that is waiting on this object’s monitor. If any threads are waiting on this object, one of them is chosen to be awakened. The choice is arbitrary and occurs at the discretion of the implementation. A thread waits on an object’s monitor by calling one of the {@code wait} methods.&lt;/td&gt;
+&lt;td&gt;此方法只应由作为此对象监视器的所有者的线程来调用。通过以下三种方法之一，线程可以成为此对象监视器的所有者：1.通过执行此对象的同步 (Sychronized) 实例方法。2.通过执行在此对象上进行同步的 synchronized 语句的正文。3.对于 Class 类型的对象，可以通过执行该类的同步静态方法。一次只能有一个线程拥有对象的监视器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void notifyAll()&lt;/td&gt;
+&lt;td&gt;Causes the current thread to wait until either another thread invokes the {@link java.lang.Object#notify()} method or the {@link java.lang.Object#notifyAll()} method for this object, or a specified amount of time has elapsed.&lt;/td&gt;
+&lt;td&gt;此方法只应由作为此对象监视器的所有者的线程来调用。请参阅 notify 方法，了解线程能够成为监视器所有者的方法的描述。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void wait(long timeout)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者超过指定的时间量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void wait(long timeout, int nanos)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者其他某个线程中断当前线程，或者已超过某个实际时间量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void wait()&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法。换句话说，此方法的行为就好像它仅执行 wait(0) 调用一样。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;protected void finalize()&lt;/td&gt;
+&lt;td&gt;Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. A subclass overrides the {@code finalize} method to dispose of system resources or to perform other cleanup.&lt;/td&gt;
+&lt;td&gt;finalize 的常规协定是：当 JavaTM 虚拟机已确定尚未终止的任何线程无法再通过任何方法访问此对象时，将调用此方法，除非由于准备终止的其他某个对象或类的终结操作执行了某个操作。finalize 方法可以采取任何操作，其中包括再次使此对象对其他线程可用；不过，finalize 的主要目的是在不可撤消地丢弃对象之前执行清除操作。例如，表示输入/输出连接的对象的 finalize 方法可执行显式 I/O 事务，以便在永久丢弃对象之前中断连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇博文主要是关于面试中常见的J2SE题的学习笔记，哎，这一部分是我比较薄弱的地方了，不过这些知识点对于开发尤其重要，好好学习，增强自身实力，嘿嘿。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面试题Android学习笔记</title>
+    <link href="http://yoursite.com/2016/03/13/%E9%9D%A2%E8%AF%95%E9%A2%98Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/03/13/面试题Android学习笔记/</id>
     <published>2016-03-13T09:22:15.000Z</published>
-    <updated>2016-03-13T09:32:42.060Z</updated>
+    <updated>2016-03-13T18:16:32.966Z</updated>
     
     <content type="html">&lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h4 id=&quot;Android的消息机制&quot;&gt;&lt;a href=&quot;#Android的消息机制&quot; class=&quot;headerlink&quot; title=&quot;Android的消息机制&quot;&gt;&lt;/a&gt;Android的消息机制&lt;/h4&gt;&lt;hr&gt;
 &lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h5&gt;&lt;p&gt;Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个ThreadLocal的用法。&lt;/p&gt;
 &lt;h5 id=&quot;Handler&quot;&gt;&lt;a href=&quot;#Handler&quot; class=&quot;headerlink&quot; title=&quot;Handler&quot;&gt;&lt;/a&gt;Handler&lt;/h5&gt;&lt;p&gt;A Handler allows you to send and process Message and Runnable objects associated with a thread’s MessageQueue. Each Handler instance is associated with a single thread and that thread’s message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it – from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.&lt;/p&gt;
@@ -40,7 +196,6 @@
     <summary type="html">
     
       &lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
-&lt;h4 id=&quot;Androi
     
     </summary>
     
@@ -52,9 +207,9 @@
     <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
     <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
     <published>2016-03-11T14:34:34.000Z</published>
-    <updated>2016-03-13T09:32:45.873Z</updated>
+    <updated>2016-03-13T14:26:57.441Z</updated>
     
-    <content type="html">&lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/p&gt;
+    <content type="html">&lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -108,8 +263,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/p&gt;
-&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
+      &lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;br&gt;
     
     </summary>
     
