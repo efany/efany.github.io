@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-12T13:40:30.895Z</updated>
+  <updated>2016-03-13T09:32:42.060Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android面试题学习笔记</title>
+    <link href="http://yoursite.com/2016/03/13/Android%E9%9D%A2%E8%AF%95%E9%A2%98%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/03/13/Android面试题学习笔记/</id>
+    <published>2016-03-13T09:22:15.000Z</published>
+    <updated>2016-03-13T09:32:42.060Z</updated>
+    
+    <content type="html">&lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
+&lt;h4 id=&quot;Android的消息机制&quot;&gt;&lt;a href=&quot;#Android的消息机制&quot; class=&quot;headerlink&quot; title=&quot;Android的消息机制&quot;&gt;&lt;/a&gt;Android的消息机制&lt;/h4&gt;&lt;hr&gt;
+&lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h5&gt;&lt;p&gt;Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个ThreadLocal的用法。&lt;/p&gt;
+&lt;h5 id=&quot;Handler&quot;&gt;&lt;a href=&quot;#Handler&quot; class=&quot;headerlink&quot; title=&quot;Handler&quot;&gt;&lt;/a&gt;Handler&lt;/h5&gt;&lt;p&gt;A Handler allows you to send and process Message and Runnable objects associated with a thread’s MessageQueue. Each Handler instance is associated with a single thread and that thread’s message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it – from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.&lt;/p&gt;
+&lt;p&gt;There are two main uses for a Handler: (1) to schedule messages and runnables to be executed as some point in the future; and (2) to enqueue an action to be performed on a different thread than your own.&lt;/p&gt;
+&lt;p&gt;Handler的主要是发送（send）和接收消息（Message）与发送（post）和接收Runable，其实就是都是对于Message的操作，因为post（Runable）时也是实现了发送了一条Callback为Runable的Message来实现的。&lt;/p&gt;
+&lt;p&gt;handler的send和post方法都是向消息队列（MessageQueue）插入了一条消息（Message），然后MessageQueue的next方法就返回这条消息给Looper，Looper收到消息后交给Handler处理。&lt;/p&gt;
+&lt;h5 id=&quot;Message与MessageQueue&quot;&gt;&lt;a href=&quot;#Message与MessageQueue&quot; class=&quot;headerlink&quot; title=&quot;Message与MessageQueue&quot;&gt;&lt;/a&gt;Message与MessageQueue&lt;/h5&gt;&lt;p&gt;Message是线程之间传递信息的载体，包含了对消息的描述和任意的数据对象。Message中包含了两个额外的 int字段和一个object字段，这样在大部分情况下，使用者就不需要再做内存分配工作了。虽然Message的构造函数是public的，但是最好是使用Message.obtain( )或Handler.obtainMessage( )函数来获取Message对象，因为Message的实现中包含了回收再利用的机制，可以提供效率。&lt;/p&gt;
+&lt;p&gt;MessageQueue是指消息队列，是一个单链表，因为方便插入与读取，插入和读取对应的方法是enqueueMessage和next，其中next是一个无限循环，如果队列中没有消息，那么next机会阻塞在哪里，当有新消息就返回消息并且从队列中移除。&lt;/p&gt;
+&lt;h5 id=&quot;Looper&quot;&gt;&lt;a href=&quot;#Looper&quot; class=&quot;headerlink&quot; title=&quot;Looper&quot;&gt;&lt;/a&gt;Looper&lt;/h5&gt;&lt;p&gt;Looper实现的事消息循环的功能，会不停的查看MessageQueue中是否有新消息，如果有新消息就立刻处理。Handler的工作必须有Looper，使用Looper.prepare()可以为线程创建一个Looper，接着使用Looper.loop()来开启消息循环。在ActivityThread中默认执行了prepareMainLooper()方法，&lt;/p&gt;
+&lt;h5 id=&quot;ThreadLocal&quot;&gt;&lt;a href=&quot;#ThreadLocal&quot; class=&quot;headerlink&quot; title=&quot;ThreadLocal&quot;&gt;&lt;/a&gt;ThreadLocal&lt;/h5&gt;&lt;p&gt;Implements a thread-local storage, that is, a variable for which each thread has its own value. All threads share the same ThreadLocal object, but each sees a different value when accessing it, and changes made by one thread do not affect the other threads. The implementation supports null values.&lt;/p&gt;
+&lt;p&gt;ThreadLocal是一个线程内部的数据存储类，它存在的意义就在于如果没有这样一个类，那么多个线程同时访问一个数据就可能出现不可预料的情况，相对于锁机制的时间换空间,ThreadLocal相当于空间换时间，有其优势。&lt;/p&gt;
+&lt;p&gt;ThreadLocal实现原理就是对于每一个数据建立了一个Object[]   table数组，每次存放读取都是操作线程相对应的数据。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
+&lt;h4 id=&quot;Androi
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>个人博客搭建之Github篇</title>
     <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
     <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
     <published>2016-03-11T14:34:34.000Z</published>
-    <updated>2016-03-12T13:40:30.895Z</updated>
+    <updated>2016-03-13T09:32:45.873Z</updated>
     
     <content type="html">&lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;/p&gt;
 &lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
