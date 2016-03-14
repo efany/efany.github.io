@@ -171,61 +171,6 @@
   </entry>
   
   <entry>
-    <title>面试题Android学习笔记</title>
-    <link href="http://yoursite.com/2016/03/12/%E9%9D%A2%E8%AF%95%E9%A2%98Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2016/03/12/面试题Android学习笔记/</id>
-    <published>2016-03-12T13:54:24.000Z</published>
-    <updated>2016-03-14T14:16:27.119Z</updated>
-    
-    <content type="html">&lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4 id=&quot;Android的消息机制&quot;&gt;&lt;a href=&quot;#Android的消息机制&quot; class=&quot;headerlink&quot; title=&quot;Android的消息机制&quot;&gt;&lt;/a&gt;Android的消息机制&lt;/h4&gt;&lt;hr&gt;
-&lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h5&gt;&lt;p&gt;Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个ThreadLocal的用法。&lt;/p&gt;
-&lt;h5 id=&quot;Handler&quot;&gt;&lt;a href=&quot;#Handler&quot; class=&quot;headerlink&quot; title=&quot;Handler&quot;&gt;&lt;/a&gt;Handler&lt;/h5&gt;&lt;p&gt;A Handler allows you to send and process Message and Runnable objects associated with a thread’s MessageQueue. Each Handler instance is associated with a single thread and that thread’s message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it – from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.&lt;/p&gt;
-&lt;p&gt;There are two main uses for a Handler: (1) to schedule messages and runnables to be executed as some point in the future; and (2) to enqueue an action to be performed on a different thread than your own.&lt;/p&gt;
-&lt;p&gt;Handler的主要是发送（send）和接收消息（Message）与发送（post）和接收Runable，其实就是都是对于Message的操作，因为post（Runable）时也是实现了发送了一条Callback为Runable的Message来实现的。&lt;/p&gt;
-&lt;p&gt;handler的send和post方法都是向消息队列（MessageQueue）插入了一条消息（Message），然后MessageQueue的next方法就返回这条消息给Looper，Looper收到消息后交给Handler处理。&lt;/p&gt;
-&lt;h5 id=&quot;Message与MessageQueue&quot;&gt;&lt;a href=&quot;#Message与MessageQueue&quot; class=&quot;headerlink&quot; title=&quot;Message与MessageQueue&quot;&gt;&lt;/a&gt;Message与MessageQueue&lt;/h5&gt;&lt;p&gt;Message是线程之间传递信息的载体，包含了对消息的描述和任意的数据对象。Message中包含了两个额外的 int字段和一个object字段，这样在大部分情况下，使用者就不需要再做内存分配工作了。虽然Message的构造函数是public的，但是最好是使用Message.obtain( )或Handler.obtainMessage( )函数来获取Message对象，因为Message的实现中包含了回收再利用的机制，可以提供效率。&lt;/p&gt;
-&lt;p&gt;MessageQueue是指消息队列，是一个单链表，因为方便插入与读取，插入和读取对应的方法是enqueueMessage和next，其中next是一个无限循环，如果队列中没有消息，那么next机会阻塞在哪里，当有新消息就返回消息并且从队列中移除。&lt;/p&gt;
-&lt;h5 id=&quot;Looper&quot;&gt;&lt;a href=&quot;#Looper&quot; class=&quot;headerlink&quot; title=&quot;Looper&quot;&gt;&lt;/a&gt;Looper&lt;/h5&gt;&lt;p&gt;Looper实现的事消息循环的功能，会不停的查看MessageQueue中是否有新消息，如果有新消息就立刻处理。Handler的工作必须有Looper，使用Looper.prepare()可以为线程创建一个Looper，接着使用Looper.loop()来开启消息循环。在ActivityThread中默认执行了prepareMainLooper()方法，&lt;/p&gt;
-&lt;h5 id=&quot;ThreadLocal&quot;&gt;&lt;a href=&quot;#ThreadLocal&quot; class=&quot;headerlink&quot; title=&quot;ThreadLocal&quot;&gt;&lt;/a&gt;ThreadLocal&lt;/h5&gt;&lt;p&gt;Implements a thread-local storage, that is, a variable for which each thread has its own value. All threads share the same ThreadLocal object, but each sees a different value when accessing it, and changes made by one thread do not affect the other threads. The implementation supports null values.&lt;/p&gt;
-&lt;p&gt;ThreadLocal是一个线程内部的数据存储类，它存在的意义就在于如果没有这样一个类，那么多个线程同时访问一个数据就可能出现不可预料的情况，相对于锁机制的时间换空间,ThreadLocal相当于空间换时间，有其优势。&lt;/p&gt;
-&lt;p&gt;ThreadLocal实现原理就是对于每一个数据建立了一个Object[]   table数组，每次存放读取都是操作线程相对应的数据。&lt;/p&gt;
-&lt;h4 id=&quot;Android的进程、线程和线程池&quot;&gt;&lt;a href=&quot;#Android的进程、线程和线程池&quot; class=&quot;headerlink&quot; title=&quot;Android的进程、线程和线程池&quot;&gt;&lt;/a&gt;Android的进程、线程和线程池&lt;/h4&gt;&lt;hr&gt;
-&lt;h5 id=&quot;进程与线程的区别和联系&quot;&gt;&lt;a href=&quot;#进程与线程的区别和联系&quot; class=&quot;headerlink&quot; title=&quot;进程与线程的区别和联系&quot;&gt;&lt;/a&gt;进程与线程的区别和联系&lt;/h5&gt;&lt;p&gt;进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动,进程是系统进行资源分配和调度的一个独立单位.&lt;/p&gt;
-&lt;p&gt;线程是进程的一个实体,是CPU调度和分派的基本单位,它是比进程更小的能独立运行的基本单位.线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源.&lt;/p&gt;
-&lt;p&gt;一个进程可以创建和撤销另一个线程;同一个进程中的多个线程之间可以并发执行。相对进程而言，线程是一个更加接近于执行体的概念，它可以与同进程中的其他线程共享数据，但拥有自己的栈空间，拥有独立的执行序列。在串行程序基础上引入线程和进程是为了提高程序的并发度，从而提高程序运行效率和响应时间。&lt;/p&gt;
-&lt;p&gt;进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。&lt;br&gt;1) 简而言之,一个程序至少有一个进程,一个进程至少有一个线程.&lt;br&gt;2) 线程的划分尺度小于进程，使得多线程程序的并发性高。&lt;br&gt;3) 另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。&lt;br&gt;4) 线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。&lt;br&gt;5) 从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。&lt;/p&gt;
-&lt;h5 id=&quot;AsyncTask&quot;&gt;&lt;a href=&quot;#AsyncTask&quot; class=&quot;headerlink&quot; title=&quot;AsyncTask&quot;&gt;&lt;/a&gt;AsyncTask&lt;/h5&gt;&lt;p&gt;AsyncTask是一种轻量级的异步任务类型，它可以再线程池中执行后台任务，然后把执行的进度和结果传递给主线程并更新UI，AsyncTask封装了Thread和Handler，并且通过AsyncTask可以很方便的执行后台任务并且在主线程中访问UI。&lt;/p&gt;
-&lt;p&gt;必须在主线程中加载，对象必须在UI线程中调用，只能执行一次，Android1.6前是串行执行任务，1.6~3.0是采用在线程池了并行执行，3.0后改为串行执行，但是通过executeOnExecuter()可以并行执行。&lt;/p&gt;
-&lt;h5 id=&quot;HandlerThread&quot;&gt;&lt;a href=&quot;#HandlerThread&quot; class=&quot;headerlink&quot; title=&quot;HandlerThread&quot;&gt;&lt;/a&gt;HandlerThread&lt;/h5&gt;&lt;p&gt;HandlerThread继承了Thread，它是一种可以使用Handler的Thread。&lt;/p&gt;
-&lt;h5 id=&quot;IntentService&quot;&gt;&lt;a href=&quot;#IntentService&quot; class=&quot;headerlink&quot; title=&quot;IntentService&quot;&gt;&lt;/a&gt;IntentService&lt;/h5&gt;&lt;p&gt;IntentService是一个特殊的Service，IntentService可用于执行后台耗时的任务，由于它是一个服务，所以优先级比较高，不容易被杀死，IntentService封装了HandlerThread和Handler&lt;/p&gt;
-&lt;h5 id=&quot;线程池&quot;&gt;&lt;a href=&quot;#线程池&quot; class=&quot;headerlink&quot; title=&quot;线程池&quot;&gt;&lt;/a&gt;线程池&lt;/h5&gt;&lt;p&gt;1) 重用线程池中的线程，避免线程因为创建和销毁所带来的性能开销&lt;br&gt;2) 能有效的控制线程池的最大并发数，避免大量的线程因相互抢占系统资源而导致的堵塞现象&lt;br&gt;3) 能够对线程进行简单的管理，并提供定时执行和制定间隔循环执行等功能&lt;/p&gt;
-&lt;p&gt;######ThreadPoolExecutor&lt;br&gt;是线程池的真正实现&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;public ThreadPoolExecutor(int corePoolSize,
-                              int maximumPoolSize,
-                              long keepAliveTime,
-                              TimeUnit unit,
-                              BlockingQueue&amp;lt;Runnable&amp;gt; workQueue,
-                              ThreadFactory threadFactory,
-                              RejectedExecutionHandler handler)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;corePoolSize - 池中所保存的线程数，包括空闲线程。&lt;br&gt;maximumPoolSize - 池中允许的最大线程数。&lt;br&gt;keepAliveTime - 当线程数大于核心时，此为终止前多余的空闲线程等待新任务的最长时间。&lt;br&gt;unit - keepAliveTime 参数的时间单位。&lt;br&gt;workQueue - 执行前用于保持任务的队列。此队列仅保持由 execute 方法提交的 Runnable 任务。&lt;br&gt;threadFactory - 线程工厂，为线程池提供创建新线程的功能。&lt;br&gt;handler - 当线程池无法执行新任务的时候，会调用handler的rejectedExecutionException来通知调用者。&lt;/p&gt;
-&lt;h6 id=&quot;FixedThreadPool&quot;&gt;&lt;a href=&quot;#FixedThreadPool&quot; class=&quot;headerlink&quot; title=&quot;FixedThreadPool&quot;&gt;&lt;/a&gt;FixedThreadPool&lt;/h6&gt;&lt;p&gt;是一种线程数量固定的线程池，当线程处于空闲状态时，不会被回收，并且没有超时机制，所以能够快速的响应外界的请求。&lt;/p&gt;
-&lt;h6 id=&quot;CachedThreadPool&quot;&gt;&lt;a href=&quot;#CachedThreadPool&quot; class=&quot;headerlink&quot; title=&quot;CachedThreadPool&quot;&gt;&lt;/a&gt;CachedThreadPool&lt;/h6&gt;&lt;p&gt;没有核心线程，但是可以创建任意多个非核心线程，超时时长为60秒。&lt;/p&gt;
-&lt;h6 id=&quot;ScheduledThreadPool&quot;&gt;&lt;a href=&quot;#ScheduledThreadPool&quot; class=&quot;headerlink&quot; title=&quot;ScheduledThreadPool&quot;&gt;&lt;/a&gt;ScheduledThreadPool&lt;/h6&gt;&lt;p&gt;核心线程数固定，非核心线程数量无限制，超时时长为，意味着非核心一旦闲置就被回收。&lt;/p&gt;
-&lt;h6 id=&quot;SingleThreadExector&quot;&gt;&lt;a href=&quot;#SingleThreadExector&quot; class=&quot;headerlink&quot; title=&quot;SingleThreadExector&quot;&gt;&lt;/a&gt;SingleThreadExector&lt;/h6&gt;&lt;p&gt;只有一个核心线程，是的所有任务顺序执行。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>个人博客搭建之Github篇</title>
     <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
     <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
