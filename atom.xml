@@ -212,6 +212,188 @@
   </entry>
   
   <entry>
+    <title>面试题J2SE学习笔记</title>
+    <link href="http://yoursite.com/2016/03/14/%E9%9D%A2%E8%AF%95%E9%A2%98J2SE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/03/14/面试题J2SE学习笔记/</id>
+    <published>2016-03-13T18:16:58.000Z</published>
+    <updated>2016-03-15T16:56:03.564Z</updated>
+    
+    <content type="html">&lt;p&gt;这篇博文主要是关于面试中常见的J2SE题的学习笔记，哎，这一部分是我比较薄弱的地方了，不过这些知识点对于开发尤其重要，好好学习，增强自身实力，嘿嘿。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;九种基本数据类型的大小，以及他们的封装类。&quot;&gt;&lt;a href=&quot;#九种基本数据类型的大小，以及他们的封装类。&quot; class=&quot;headerlink&quot; title=&quot;九种基本数据类型的大小，以及他们的封装类。&quot;&gt;&lt;/a&gt;九种基本数据类型的大小，以及他们的封装类。&lt;/h4&gt;&lt;p&gt;基本数据类型可以分为四类，字符类型char，布尔类型boolean，空类型void以及数值类型byte、short、int、long、float、double。数值类型又可以分为整数类型byte、short、int、long和浮点数类型float、double。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;简单类型&lt;/th&gt;
+&lt;th&gt;位数&lt;/th&gt;
+&lt;th&gt;表示范围&lt;/th&gt;
+&lt;th&gt;封装类&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;void&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;–&lt;/td&gt;
+&lt;td&gt;Void&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;byte&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;-128~127&lt;/td&gt;
+&lt;td&gt;Byte&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;true/false&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;char&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;存储Unicode码&lt;/td&gt;
+&lt;td&gt;Character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;short&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;-32768~32767&lt;/td&gt;
+&lt;td&gt;Short&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Int&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;负的2的31次方到正的2的31次方减1&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;long&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;负的2的63次方到正的2的63次方减1&lt;/td&gt;
+&lt;td&gt;Long&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;1.4E-45~3.4028235E38&lt;/td&gt;
+&lt;td&gt;Float&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;double&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;4.9e-324~1.8e308&lt;/td&gt;
+&lt;td&gt;Double&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Switch能否用string做参数&quot;&gt;&lt;a href=&quot;#Switch能否用string做参数&quot; class=&quot;headerlink&quot; title=&quot;Switch能否用string做参数&quot;&gt;&lt;/a&gt;Switch能否用string做参数&lt;/h4&gt;&lt;p&gt;在java7之前switch只支持byte、short、char、int、integer、enum枚举类型，java7后switch支持String作为参数了。&lt;/p&gt;
+&lt;h4 id=&quot;equals与-的区别。&quot;&gt;&lt;a href=&quot;#equals与-的区别。&quot; class=&quot;headerlink&quot; title=&quot;equals与==的区别。&quot;&gt;&lt;/a&gt;equals与==的区别。&lt;/h4&gt;&lt;p&gt;==比较的是两个数据的内存地址是否相同，equals在Object类里比较的也是数据的内存地址，但是很多类都覆盖了该方法，比较的是两个数据的内存地址存储的值是否相同。对于基本类型两者效果一样，但是对于覆盖equals的类就不同了。&lt;/p&gt;
+&lt;h4 id=&quot;Object有哪些公用方法？&quot;&gt;&lt;a href=&quot;#Object有哪些公用方法？&quot; class=&quot;headerlink&quot; title=&quot;Object有哪些公用方法？&quot;&gt;&lt;/a&gt;Object有哪些公用方法？&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;方法&lt;/th&gt;
+&lt;th&gt;用途&lt;/th&gt;
+&lt;th&gt;简介&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;public final Class&amp;lt;? extends Object&amp;gt; getClass()&lt;/td&gt;
+&lt;td&gt;Returns the runtime class of this. The returned object is the object that is locked by {@code  static synchronized} methods of the represented class.&lt;/td&gt;
+&lt;td&gt;返回一个对象的运行时类。该 Class 对象是由所表示类的 static synchronized 方法锁定的对象。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;protected Object clone()&lt;/td&gt;
+&lt;td&gt;Creates and returns a copy of this object.&lt;/td&gt;
+&lt;td&gt;首先，使用这个方法的类必须实现java.lang.Cloneable接口，否则会抛出CloneNotSupportedException异常。Cloneable接口中不包含任何方法，所以实现它时只要在类声明中加上implements语句即可。第二个比较特殊的地方在于这个方法是protected修饰的，覆写clone()方法的时候需要写成public，才能让类外部的代码调用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public boolean equals(Object obj)&lt;/td&gt;
+&lt;td&gt;Indicates whether some other object is “equal to” this one.&lt;/td&gt;
+&lt;td&gt;　对于Object类的equals()方法来说，它判断调用equals()方法的引用于传进来的引用是否一致，即这两个引用是否指向的是同一个对象。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public int hashCode()&lt;/td&gt;
+&lt;td&gt;Returns a hash code value for the object.&lt;/td&gt;
+&lt;td&gt;当你覆写（override）了equals()方法之后，必须也覆写hashCode()方法，反之亦然。这个方法返回一个整型值（hash code value），如果两个对象被equals()方法判断为相等，那么它们就应该拥有同样的hash code。Object类的hashCode()方法为不同的对象返回不同的值，Object类的hashCode值表示的是对象的地址。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public String toString()&lt;/td&gt;
+&lt;td&gt;　Returns a string representation of the object.&lt;/td&gt;
+&lt;td&gt;当打印引用，如调用System.out.println()时，会自动调用对象的toString()方法，打印出引用所指的对象的toString()方法的返回值，因为每个类都直接或间接地继承自Object，因此每个类都有toString()方法。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void notify()&lt;/td&gt;
+&lt;td&gt;Wakes up a single thread that is waiting on this object’s monitor. If any threads are waiting on this object, one of them is chosen to be awakened. The choice is arbitrary and occurs at the discretion of the implementation. A thread waits on an object’s monitor by calling one of the {@code wait} methods.&lt;/td&gt;
+&lt;td&gt;此方法只应由作为此对象监视器的所有者的线程来调用。通过以下三种方法之一，线程可以成为此对象监视器的所有者：1.通过执行此对象的同步 (Sychronized) 实例方法。2.通过执行在此对象上进行同步的 synchronized 语句的正文。3.对于 Class 类型的对象，可以通过执行该类的同步静态方法。一次只能有一个线程拥有对象的监视器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void notifyAll()&lt;/td&gt;
+&lt;td&gt;Causes the current thread to wait until either another thread invokes the {@link java.lang.Object#notify()} method or the {@link java.lang.Object#notifyAll()} method for this object, or a specified amount of time has elapsed.&lt;/td&gt;
+&lt;td&gt;此方法只应由作为此对象监视器的所有者的线程来调用。请参阅 notify 方法，了解线程能够成为监视器所有者的方法的描述。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void wait(long timeout)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者超过指定的时间量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void wait(long timeout, int nanos)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者其他某个线程中断当前线程，或者已超过某个实际时间量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;public final void wait()&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法。换句话说，此方法的行为就好像它仅执行 wait(0) 调用一样。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;protected void finalize()&lt;/td&gt;
+&lt;td&gt;Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. A subclass overrides the {@code finalize} method to dispose of system resources or to perform other cleanup.&lt;/td&gt;
+&lt;td&gt;finalize 的常规协定是：当 JavaTM 虚拟机已确定尚未终止的任何线程无法再通过任何方法访问此对象时，将调用此方法，除非由于准备终止的其他某个对象或类的终结操作执行了某个操作。finalize 方法可以采取任何操作，其中包括再次使此对象对其他线程可用；不过，finalize 的主要目的是在不可撤消地丢弃对象之前执行清除操作。例如，表示输入/输出连接的对象的 finalize 方法可执行显式 I/O 事务，以便在永久丢弃对象之前中断连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hashcode的作用&quot;&gt;&lt;a href=&quot;#Hashcode的作用&quot; class=&quot;headerlink&quot; title=&quot;Hashcode的作用&quot;&gt;&lt;/a&gt;Hashcode的作用&lt;/h4&gt;&lt;p&gt;1、hashCode的存在主要是用于查找的快捷性，如Hashtable，HashMap等，hashCode是用来在散列存储结构中确定对象的存储地址的；&lt;br&gt;2、如果两个对象相同，就是适用于equals(java.lang.Object)方法，那么这两个对象的hashCode一定要相同；&lt;br&gt;3、如果对象的equals方法被重写，那么对象的hashCode也尽量重写，并且产生hashCode使用的对象，一定要和equals方法中使用的一致，否则就会违反上面提到的第2点；&lt;br&gt;4、两个对象的hashCode相同，并不一定表示两个对象就相同，也就是不一定适用于equals(java.lang.Object) 方法，只能够说明这两个对象在散列存储结构中，如Hashtable，他们“存放在同一个篮子里”。&lt;/p&gt;
+&lt;p&gt;再归纳一下就是hashCode是用于查找使用的，而equals是用于比较两个对象的是否相等的。&lt;/p&gt;
+&lt;h4 id=&quot;ArrayList、LinkedList、Vector、Stack的区别&quot;&gt;&lt;a href=&quot;#ArrayList、LinkedList、Vector、Stack的区别&quot; class=&quot;headerlink&quot; title=&quot;ArrayList、LinkedList、Vector、Stack的区别&quot;&gt;&lt;/a&gt;ArrayList、LinkedList、Vector、Stack的区别&lt;/h4&gt;&lt;p&gt;ArrayList 是一个可改变大小的数组.当更多的元素加入到ArrayList中时,其大小将会动态地增长.内部的元素可以直接通过get与set方法进行访问,因为ArrayList本质上就是一个数组.&lt;br&gt;LinkedList 是一个双链表,在添加和删除元素时具有比ArrayList更好的性能.但在get与set方面弱于ArrayList.&lt;br&gt;当然,这些对比都是指数据量很大或者操作很频繁的情况下的对比,如果数据和运算量很小,那么对比将失去意义.&lt;br&gt;Vector 和ArrayList类似,但属于强同步类。如果你的程序本身是线程安全的(thread-safe,没有在多个线程之间共享同一个集合/对象),那么使用ArrayList是更好的选择。&lt;br&gt;Vector和ArrayList在更多元素添加进来时会请求更大的空间。Vector每次请求其大小的双倍空间，而ArrayList每次对size增长50%.&lt;br&gt;Stack类：继承自Vector，实现一个后进先出的栈。提供了几个基本方法，push、pop、peak、empty、search等。&lt;br&gt;而 LinkedList 还实现了 Queue 接口,该接口比List提供了更多的方法,包括 offer(),peek(),poll()等.&lt;br&gt;注意: 默认情况下ArrayList的初始容量非常小,所以如果可以预估数据量的话,分配一个较大的初始值属于最佳实践,这样可以减少调整大小的开销。&lt;/p&gt;
+&lt;h4 id=&quot;Map、Set、List、Queue&quot;&gt;&lt;a href=&quot;#Map、Set、List、Queue&quot; class=&quot;headerlink&quot; title=&quot;Map、Set、List、Queue&quot;&gt;&lt;/a&gt;Map、Set、List、Queue&lt;/h4&gt;&lt;p&gt;1) Collection&lt;br&gt;一组”对立”的元素，通常这些元素都服从某种规则&lt;br&gt; 　　1.1) List必须保持元素特定的顺序&lt;br&gt; 　　1.2) Set不能有重复元素&lt;br&gt; 　　1.3) Queue保持一个队列(先进先出)的顺序&lt;br&gt;2) Map&lt;br&gt;一组成对的”键值对”对象  &lt;/p&gt;
+&lt;p&gt;列表（List）的主要特征是其对象以线性方式存储，没有特定顺序，只有一个开头和一个结尾，当然，它与根本没有顺序的Set是不同的。它是链表嘛，一条链肯定有顺序这个顺序就不一定了。&lt;/p&gt;
+&lt;p&gt;集（set）是最简单的一种集合，它的对象不按特定方式排序，只是简单的把对象加入集合中，就像往口袋里放东西。对集中成员的访问和操作是通过集中对象的引用进行的，所以集中不能有重复对象。我们知道数学上的集合也是Set这个，集合里面一定是没有重复的元素的。 &lt;/p&gt;
+&lt;p&gt;队列（Queue）在jdk5.0以前，通常的实现方式是使用java.util.List集合来模仿Queue。Queue的概念通过把对象添加（称为enqueuing的操作）到List的尾部（即Queue的后部）并通过从List的头部（即Queue的前部）提取对象而从 List中移除（称为dequeuing的操作）来模拟。你需要执行先进先出的动作时可以直接使用Queue接口就可以了。  &lt;/p&gt;
+&lt;p&gt;映射（Map），这个在java里不是地图的意思，其实地图也是映射哈。它里面的东西是键－值对（key-value）出现的，键值对是什么呢？举个例子，比如我们查字典，用部首查字法。目录那个字就是键，这个字的解释就是值。键和值成对出现。这样说可以理解吧。这也是很常用的数据结构哦。 &lt;/p&gt;
+&lt;h4 id=&quot;HashMap和HashTable&quot;&gt;&lt;a href=&quot;#HashMap和HashTable&quot; class=&quot;headerlink&quot; title=&quot;HashMap和HashTable&quot;&gt;&lt;/a&gt;HashMap和HashTable&lt;/h4&gt;&lt;p&gt;HashTable和HashMap区别&lt;/p&gt;
+&lt;p&gt;第一，继承不同。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;public class Hashtable extends Dictionary implements Map&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;public class HashMap  extends AbstractMap implements Map&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;第二&lt;/p&gt;
+&lt;p&gt;Hashtable 中的方法是同步的，而HashMap中的方法在缺省情况下是非同步的。在多线程并发的环境下，可以直接使用Hashtable，但是要使用HashMap的话就要自己增加同步处理了。&lt;/p&gt;
+&lt;p&gt;第三&lt;/p&gt;
+&lt;p&gt;Hashtable中，key和value都不允许出现null值。&lt;/p&gt;
+&lt;p&gt;在HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。当get()方法返回null值时，即可以表示 HashMap中没有该键，也可以表示该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键， 而应该用containsKey()方法来判断。&lt;/p&gt;
+&lt;p&gt;第四，两个遍历方式的内部实现上不同。&lt;/p&gt;
+&lt;p&gt;Hashtable、HashMap都使用了 Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。&lt;/p&gt;
+&lt;p&gt;第五&lt;/p&gt;
+&lt;p&gt;哈希值的使用不同，HashTable直接使用对象的hashCode。而HashMap重新计算hash值。&lt;/p&gt;
+&lt;p&gt;第六&lt;/p&gt;
+&lt;p&gt;Hashtable和HashMap它们两个内部实现方式的数组的初始大小和扩容的方式。HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。 &lt;/p&gt;
+&lt;h4 id=&quot;HashMap和ConcurrentHashMap的区别&quot;&gt;&lt;a href=&quot;#HashMap和ConcurrentHashMap的区别&quot; class=&quot;headerlink&quot; title=&quot;HashMap和ConcurrentHashMap的区别&quot;&gt;&lt;/a&gt;HashMap和ConcurrentHashMap的区别&lt;/h4&gt;&lt;p&gt;ConcurrentHashMap是线程安全的，ConcurrentHashMap具体是怎么实现线程安全的呢，肯定不可能是每个方法加synchronized，那样就变成了HashTable。&lt;br&gt;从ConcurrentHashMap代码中可以看出，它引入了一个“分段锁”的概念，具体可以理解为把一个大的Map拆分成N个小的HashTable，根据key.hashCode()来决定把key放到哪个HashTable中。&lt;br&gt;在ConcurrentHashMap中，就是把Map分成了N个Segment，put和get的时候，都是现根据key.hashCode()算出放到哪个Segment中&lt;/p&gt;
+&lt;h4 id=&quot;TreeMap、HashMap、LindedHashMap&quot;&gt;&lt;a href=&quot;#TreeMap、HashMap、LindedHashMap&quot; class=&quot;headerlink&quot; title=&quot;TreeMap、HashMap、LindedHashMap&quot;&gt;&lt;/a&gt;TreeMap、HashMap、LindedHashMap&lt;/h4&gt;&lt;p&gt;TreeMap实现SortMap接口，能够把它保存的记录根据键排序,默认是按键值的升序排序，也可以指定排序的比较器，当用Iterator 遍历TreeMap时，得到的记录是排过序的。    &lt;/p&gt;
+&lt;p&gt;Hashmap 是一个最常用的Map,它根据键的HashCode 值存储数据,根据键可以直接获取它的值，具有很快的访问速度，遍历时，取得数据的顺序是完全随机的。HashMap最多只允许一条记录的键为Null;允许多条记录的值为 Null;HashMap不支持线程的同步，即任一时刻可以有多个线程同时写HashMap;可能会导致数据的不一致。如果需要同步，可以用 Collections的synchronizedMap方法使HashMap具有同步的能力，或者使用ConcurrentHashMap。               &lt;/p&gt;
+&lt;p&gt;LinkedHashMap保存了记录的插入顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的.也可以在构造时用带参数，按照应用次数排序。在遍历的时候会比HashMap慢，不过有种情况例外，当HashMap容量很大，实际数据较少时，遍历起来可能会比LinkedHashMap慢，因为LinkedHashMap的遍历速度只和实际数据有关，和容量无关，而HashMap的遍历速度和他的容量有关。&lt;/p&gt;
+&lt;h4 id=&quot;Collection与Collections&quot;&gt;&lt;a href=&quot;#Collection与Collections&quot; class=&quot;headerlink&quot; title=&quot;Collection与Collections&quot;&gt;&lt;/a&gt;Collection与Collections&lt;/h4&gt;&lt;p&gt;java.util.Collection 是一个集合接口。它提供了对集合对象进行基本操作的通用接口方法。Collection接口在Java 类库中有很多具体的实现。Collection接口的意义是为各种具体的集合提供了最大化的统一操作方式。继承与他的接口主要有Set 、List和Queue.&lt;/p&gt;
+&lt;p&gt;java.util.Collections 是一个包装类。它包含有各种有关集合操作的静态多态方法。此类不能实例化，就像一个工具类，服务于Java的Collection框架。Collections是针对集合类的一个帮助类，他提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作。     &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇博文主要是关于面试中常见的J2SE题的学习笔记，哎，这一部分是我比较薄弱的地方了，不过这些知识点对于开发尤其重要，好好学习，增强自身实力，嘿嘿。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>面试题Android学习笔记</title>
     <link href="http://yoursite.com/2016/03/12/%E9%9D%A2%E8%AF%95%E9%A2%98Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2016/03/12/面试题Android学习笔记/</id>
