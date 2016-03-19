@@ -59,16 +59,24 @@
 
 
 
-<meta name="description" content="这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。">
+<meta name="description" content="这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。
+Android的消息机制
+概述Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个T">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试题Android学习笔记">
+<meta property="og:title" content="Android面试题学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/03/12/面试题Android学习笔记/index.html">
 <meta property="og:site_name" content="efan的个人博客">
-<meta property="og:description" content="这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。">
-<meta property="og:updated_time" content="2016-03-14T14:16:27.119Z">
+<meta property="og:description" content="这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。
+Android的消息机制
+概述Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个T">
+<meta property="og:image" content="http://yoursite.com/2016/03/12/面试题Android学习笔记/fragment_cycle.png">
+<meta property="og:updated_time" content="2016-03-16T06:52:33.549Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试题Android学习笔记">
-<meta name="twitter:description" content="这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。">
+<meta name="twitter:title" content="Android面试题学习笔记">
+<meta name="twitter:description" content="这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。
+Android的消息机制
+概述Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个T">
+<meta name="twitter:image" content="http://yoursite.com/2016/03/12/面试题Android学习笔记/fragment_cycle.png">
 
 
 
@@ -86,7 +94,7 @@
   };
 </script>
 
-  <title> 面试题Android学习笔记 | efan的个人博客 </title>
+  <title> Android面试题学习笔记 | efan的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +244,7 @@
             
             
               
-                面试题Android学习笔记
+                Android面试题学习笔记
               
             
           </h1>
@@ -283,7 +291,6 @@
 
       
         <p>这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。</p>
-<a id="more"></a>
 <h4 id="Android的消息机制"><a href="#Android的消息机制" class="headerlink" title="Android的消息机制"></a>Android的消息机制</h4><hr>
 <h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个ThreadLocal的用法。</p>
 <h5 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h5><p>A Handler allows you to send and process Message and Runnable objects associated with a thread’s MessageQueue. Each Handler instance is associated with a single thread and that thread’s message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it – from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.</p>
@@ -319,6 +326,8 @@
 <h6 id="CachedThreadPool"><a href="#CachedThreadPool" class="headerlink" title="CachedThreadPool"></a>CachedThreadPool</h6><p>没有核心线程，但是可以创建任意多个非核心线程，超时时长为60秒。</p>
 <h6 id="ScheduledThreadPool"><a href="#ScheduledThreadPool" class="headerlink" title="ScheduledThreadPool"></a>ScheduledThreadPool</h6><p>核心线程数固定，非核心线程数量无限制，超时时长为，意味着非核心一旦闲置就被回收。</p>
 <h6 id="SingleThreadExector"><a href="#SingleThreadExector" class="headerlink" title="SingleThreadExector"></a>SingleThreadExector</h6><p>只有一个核心线程，是的所有任务顺序执行。</p>
+<h4 id="Activity与Fragment"><a href="#Activity与Fragment" class="headerlink" title="Activity与Fragment"></a>Activity与Fragment</h4><hr>
+<img src="/2016/03/12/面试题Android学习笔记/fragment_cycle.png" alt="fragment_cycle.png" title="">
 
       
     </div>
@@ -336,8 +345,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/11/个人博客搭建之Github篇/" rel="next" title="个人博客搭建之Github篇">
-                <i class="fa fa-chevron-left"></i> 个人博客搭建之Github篇
+              <a href="/2016/03/11/个人博客搭建/" rel="next" title="博客搭建">
+                <i class="fa fa-chevron-left"></i> 博客搭建
               </a>
             
           </div>
@@ -373,7 +382,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/03/12/面试题Android学习笔记/"
-           data-title="面试题Android学习笔记" data-url="http://yoursite.com/2016/03/12/面试题Android学习笔记/">
+           data-title="Android面试题学习笔记" data-url="http://yoursite.com/2016/03/12/面试题Android学习笔记/">
       </div>
     
   </div>
@@ -461,7 +470,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android的消息机制"><span class="nav-number">1.</span> <span class="nav-text">Android的消息机制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Handler"><span class="nav-number">1.2.</span> <span class="nav-text">Handler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Message与MessageQueue"><span class="nav-number">1.3.</span> <span class="nav-text">Message与MessageQueue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Looper"><span class="nav-number">1.4.</span> <span class="nav-text">Looper</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ThreadLocal"><span class="nav-number">1.5.</span> <span class="nav-text">ThreadLocal</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android的进程、线程和线程池"><span class="nav-number">2.</span> <span class="nav-text">Android的进程、线程和线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程与线程的区别和联系"><span class="nav-number">2.1.</span> <span class="nav-text">进程与线程的区别和联系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AsyncTask"><span class="nav-number">2.2.</span> <span class="nav-text">AsyncTask</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HandlerThread"><span class="nav-number">2.3.</span> <span class="nav-text">HandlerThread</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IntentService"><span class="nav-number">2.4.</span> <span class="nav-text">IntentService</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线程池"><span class="nav-number">2.5.</span> <span class="nav-text">线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#FixedThreadPool"><span class="nav-number">2.5.1.</span> <span class="nav-text">FixedThreadPool</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#CachedThreadPool"><span class="nav-number">2.5.2.</span> <span class="nav-text">CachedThreadPool</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ScheduledThreadPool"><span class="nav-number">2.5.3.</span> <span class="nav-text">ScheduledThreadPool</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SingleThreadExector"><span class="nav-number">2.5.4.</span> <span class="nav-text">SingleThreadExector</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Android的消息机制"><span class="nav-number">1.</span> <span class="nav-text">Android的消息机制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Handler"><span class="nav-number">1.2.</span> <span class="nav-text">Handler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Message与MessageQueue"><span class="nav-number">1.3.</span> <span class="nav-text">Message与MessageQueue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Looper"><span class="nav-number">1.4.</span> <span class="nav-text">Looper</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ThreadLocal"><span class="nav-number">1.5.</span> <span class="nav-text">ThreadLocal</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android的进程、线程和线程池"><span class="nav-number">2.</span> <span class="nav-text">Android的进程、线程和线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程与线程的区别和联系"><span class="nav-number">2.1.</span> <span class="nav-text">进程与线程的区别和联系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AsyncTask"><span class="nav-number">2.2.</span> <span class="nav-text">AsyncTask</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HandlerThread"><span class="nav-number">2.3.</span> <span class="nav-text">HandlerThread</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IntentService"><span class="nav-number">2.4.</span> <span class="nav-text">IntentService</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线程池"><span class="nav-number">2.5.</span> <span class="nav-text">线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#FixedThreadPool"><span class="nav-number">2.5.1.</span> <span class="nav-text">FixedThreadPool</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#CachedThreadPool"><span class="nav-number">2.5.2.</span> <span class="nav-text">CachedThreadPool</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ScheduledThreadPool"><span class="nav-number">2.5.3.</span> <span class="nav-text">ScheduledThreadPool</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SingleThreadExector"><span class="nav-number">2.5.4.</span> <span class="nav-text">SingleThreadExector</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Activity与Fragment"><span class="nav-number">3.</span> <span class="nav-text">Activity与Fragment</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

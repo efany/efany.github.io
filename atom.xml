@@ -394,14 +394,13 @@
   </entry>
   
   <entry>
-    <title>面试题Android学习笔记</title>
+    <title>Android面试题学习笔记</title>
     <link href="http://yoursite.com/2016/03/12/%E9%9D%A2%E8%AF%95%E9%A2%98Android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2016/03/12/面试题Android学习笔记/</id>
     <published>2016-03-12T13:54:24.000Z</published>
-    <updated>2016-03-14T14:16:27.119Z</updated>
+    <updated>2016-03-16T06:52:33.549Z</updated>
     
     <content type="html">&lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h4 id=&quot;Android的消息机制&quot;&gt;&lt;a href=&quot;#Android的消息机制&quot; class=&quot;headerlink&quot; title=&quot;Android的消息机制&quot;&gt;&lt;/a&gt;Android的消息机制&lt;/h4&gt;&lt;hr&gt;
 &lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h5&gt;&lt;p&gt;Android的消息处理机制主要是指Handler的运行机制以及附带的MessageQueue和Looper的工作过程。再加上一个ThreadLocal的用法。&lt;/p&gt;
 &lt;h5 id=&quot;Handler&quot;&gt;&lt;a href=&quot;#Handler&quot; class=&quot;headerlink&quot; title=&quot;Handler&quot;&gt;&lt;/a&gt;Handler&lt;/h5&gt;&lt;p&gt;A Handler allows you to send and process Message and Runnable objects associated with a thread’s MessageQueue. Each Handler instance is associated with a single thread and that thread’s message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it – from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.&lt;/p&gt;
@@ -437,11 +436,14 @@
 &lt;h6 id=&quot;CachedThreadPool&quot;&gt;&lt;a href=&quot;#CachedThreadPool&quot; class=&quot;headerlink&quot; title=&quot;CachedThreadPool&quot;&gt;&lt;/a&gt;CachedThreadPool&lt;/h6&gt;&lt;p&gt;没有核心线程，但是可以创建任意多个非核心线程，超时时长为60秒。&lt;/p&gt;
 &lt;h6 id=&quot;ScheduledThreadPool&quot;&gt;&lt;a href=&quot;#ScheduledThreadPool&quot; class=&quot;headerlink&quot; title=&quot;ScheduledThreadPool&quot;&gt;&lt;/a&gt;ScheduledThreadPool&lt;/h6&gt;&lt;p&gt;核心线程数固定，非核心线程数量无限制，超时时长为，意味着非核心一旦闲置就被回收。&lt;/p&gt;
 &lt;h6 id=&quot;SingleThreadExector&quot;&gt;&lt;a href=&quot;#SingleThreadExector&quot; class=&quot;headerlink&quot; title=&quot;SingleThreadExector&quot;&gt;&lt;/a&gt;SingleThreadExector&lt;/h6&gt;&lt;p&gt;只有一个核心线程，是的所有任务顺序执行。&lt;/p&gt;
+&lt;h4 id=&quot;Activity与Fragment&quot;&gt;&lt;a href=&quot;#Activity与Fragment&quot; class=&quot;headerlink&quot; title=&quot;Activity与Fragment&quot;&gt;&lt;/a&gt;Activity与Fragment&lt;/h4&gt;&lt;hr&gt;
+&lt;img src=&quot;/2016/03/12/面试题Android学习笔记/fragment_cycle.png&quot; alt=&quot;fragment_cycle.png&quot; title=&quot;&quot;&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;这段时间一边要忙着几个项目，一边还得忙着找实习，有空就得多看看面试题，恶补一下基础知识。之前一直都是用各种第三方库，导致基础知识严重不足，这段时间好好恶补下，我也不想特别功利的背知识点，就尽可能去好好理解学习，顺便就写点学习笔记什么的。&lt;/p&gt;
+&lt;h4 id=&quot;Androi
     
     </summary>
     
@@ -449,13 +451,15 @@
   </entry>
   
   <entry>
-    <title>个人博客搭建之Github篇</title>
-    <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BGithub%E7%AF%87/"/>
-    <id>http://yoursite.com/2016/03/11/个人博客搭建之Github篇/</id>
+    <title>博客搭建</title>
+    <link href="http://yoursite.com/2016/03/11/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2016/03/11/个人博客搭建/</id>
     <published>2016-03-11T14:34:34.000Z</published>
-    <updated>2016-03-13T16:32:29.679Z</updated>
+    <updated>2016-03-19T12:14:04.909Z</updated>
     
-    <content type="html">&lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;第一次搭建博客，看了很多人的教程，也踩了一些坑啥的，简单记录一下博客搭建的流程，如果帮到几个人也算是回馈。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;博客搭建步骤&quot;&gt;&lt;a href=&quot;#博客搭建步骤&quot; class=&quot;headerlink&quot; title=&quot;博客搭建步骤&quot;&gt;&lt;/a&gt;博客搭建步骤&lt;/h1&gt;&lt;p&gt;1) 新建一个Repository，命名为你的 name.github.io，其中name是你的用户名，例如我的用户名是efany，那么我建的Repository名称应该是 efany.github.io 。&lt;br&gt;2) 安装前需要安装两个两个应用程序，一个是Node.js（&lt;a href=&quot;http://www.cnblogs.com/LonelyShadow/p/4310100.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;教程&lt;/a&gt;）,一个是&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git&lt;/a&gt;&lt;br&gt;3) 安装&lt;a href=&quot;https://hexo.io/zh-cn/docs/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo&lt;/a&gt;&lt;br&gt;4) 根据hexo的教程就可以搭建起来自己的博客了,现在你就发现你的博客和我的长的不一样，这是因为我换了一套主题&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;next&lt;/a&gt;。我建议有能力的人都用文档来解决问题，尽可能不要去找傻瓜教程，遇到问题再去找解决方法。&lt;/p&gt;
+&lt;h1 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h1&gt;&lt;p&gt;其实搭建博客和git没什么太大关系，只要有账号就可以了，但是既然提到了就简单了解一下git和github&lt;/p&gt;
 &lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -490,14 +494,13 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&quot;忽略特定的文件&quot;&gt;&lt;a href=&quot;#忽略特定的文件&quot; class=&quot;headerlink&quot; title=&quot;忽略特定的文件&quot;&gt;&lt;/a&gt;忽略特定的文件&lt;/h2&gt;&lt;p&gt;可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。&lt;br&gt;同时Git也提供了全局的配置，core.excludesfile。&lt;br&gt;例如：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*.iml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.gradle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/local.properties&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/workspace.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/libraries&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.DS_Store&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/build&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/captures&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;忽略特定的文件&quot;&gt;&lt;a href=&quot;#忽略特定的文件&quot; class=&quot;headerlink&quot; title=&quot;忽略特定的文件&quot;&gt;&lt;/a&gt;忽略特定的文件&lt;/h2&gt;&lt;p&gt;可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。&lt;br&gt;同时Git也提供了全局的配置，core.excludesfile。&lt;br&gt;例如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*.iml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.gradle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/local.properties&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/workspace.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/.idea/libraries&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.DS_Store&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/build&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/captures&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;具体的git教程参照&lt;a href=&quot;http://blog.csdn.net/lishuo_os_ds/article/details/8078475#sec-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub详细教程&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Android-Studio的git功能&quot;&gt;&lt;a href=&quot;#Android-Studio的git功能&quot; class=&quot;headerlink&quot; title=&quot;Android Studio的git功能&quot;&gt;&lt;/a&gt;Android Studio的git功能&lt;/h2&gt;&lt;h6 id=&quot;1-注册github账号&quot;&gt;&lt;a href=&quot;#1-注册github账号&quot; class=&quot;headerlink&quot; title=&quot;1.注册github账号&quot;&gt;&lt;/a&gt;1.注册github账号&lt;/h6&gt;&lt;p&gt;自行百度 Google&lt;/p&gt;
-&lt;h6 id=&quot;1-下载安装git&quot;&gt;&lt;a href=&quot;#1-下载安装git&quot; class=&quot;headerlink&quot; title=&quot;1.下载安装git&quot;&gt;&lt;/a&gt;1.下载安装git&lt;/h6&gt;&lt;p&gt;地址：&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&quot;2-匹配到AS&quot;&gt;&lt;a href=&quot;#2-匹配到AS&quot; class=&quot;headerlink&quot; title=&quot;2.匹配到AS&quot;&gt;&lt;/a&gt;2.匹配到AS&lt;/h6&gt;&lt;p&gt;File–&amp;gt;Setting–&amp;gt;Version Control–&amp;gt;Git–&amp;gt;PAth to Git executable:&lt;/p&gt;
+&lt;h2 id=&quot;Android-Studio的git功能&quot;&gt;&lt;a href=&quot;#Android-Studio的git功能&quot; class=&quot;headerlink&quot; title=&quot;Android Studio的git功能&quot;&gt;&lt;/a&gt;Android Studio的git功能&lt;/h2&gt;&lt;h3 id=&quot;1-注册github账号&quot;&gt;&lt;a href=&quot;#1-注册github账号&quot; class=&quot;headerlink&quot; title=&quot;1.注册github账号&quot;&gt;&lt;/a&gt;1.注册github账号&lt;/h3&gt;&lt;p&gt;自行百度 Google&lt;/p&gt;
+&lt;h3 id=&quot;1-下载安装git&quot;&gt;&lt;a href=&quot;#1-下载安装git&quot; class=&quot;headerlink&quot; title=&quot;1.下载安装git&quot;&gt;&lt;/a&gt;1.下载安装git&lt;/h3&gt;&lt;p&gt;地址：&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-匹配到AS&quot;&gt;&lt;a href=&quot;#2-匹配到AS&quot; class=&quot;headerlink&quot; title=&quot;2.匹配到AS&quot;&gt;&lt;/a&gt;2.匹配到AS&lt;/h3&gt;&lt;p&gt;File–&amp;gt;Setting–&amp;gt;Version Control–&amp;gt;Git–&amp;gt;PAth to Git executable:&lt;/p&gt;
 &lt;p&gt;注意是Git/bin/git.exe&lt;/p&gt;
-&lt;h6 id=&quot;3-使用&quot;&gt;&lt;a href=&quot;#3-使用&quot; class=&quot;headerlink&quot; title=&quot;3.使用&quot;&gt;&lt;/a&gt;3.使用&lt;/h6&gt;&lt;ol&gt;
+&lt;h3 id=&quot;3-使用&quot;&gt;&lt;a href=&quot;#3-使用&quot; class=&quot;headerlink&quot; title=&quot;3.使用&quot;&gt;&lt;/a&gt;3.使用&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;VCS–&amp;gt;enable….–&amp;gt;选择git&lt;/li&gt;
 &lt;li&gt;右击工程（注意选到project目录模式）或者VCS–&amp;gt;Git–&amp;gt;add&lt;/li&gt;
 &lt;li&gt;Git–&amp;gt;commit Directory–&amp;gt;选择要上传的文件&lt;/li&gt;
@@ -509,7 +512,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github&lt;br&gt;
+      &lt;p&gt;第一次搭建博客，看了很多人的教程，也踩了一些坑啥的，简单记录一下博客搭建的流程，如果帮到几个人也算是回馈。&lt;br&gt;
     
     </summary>
     

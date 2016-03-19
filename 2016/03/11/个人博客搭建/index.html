@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github">
+<meta name="description" content="第一次搭建博客，看了很多人的教程，也踩了一些坑啥的，简单记录一下博客搭建的流程，如果帮到几个人也算是回馈。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人博客搭建之Github篇">
-<meta property="og:url" content="http://yoursite.com/2016/03/11/个人博客搭建之Github篇/index.html">
+<meta property="og:title" content="博客搭建">
+<meta property="og:url" content="http://yoursite.com/2016/03/11/个人博客搭建/index.html">
 <meta property="og:site_name" content="efan的个人博客">
-<meta property="og:description" content="其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github">
-<meta property="og:updated_time" content="2016-03-13T16:32:29.679Z">
+<meta property="og:description" content="第一次搭建博客，看了很多人的教程，也踩了一些坑啥的，简单记录一下博客搭建的流程，如果帮到几个人也算是回馈。">
+<meta property="og:updated_time" content="2016-03-19T12:14:04.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客搭建之Github篇">
-<meta name="twitter:description" content="其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github">
+<meta name="twitter:title" content="博客搭建">
+<meta name="twitter:description" content="第一次搭建博客，看了很多人的教程，也踩了一些坑啥的，简单记录一下博客搭建的流程，如果帮到几个人也算是回馈。">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 个人博客搭建之Github篇 | efan的个人博客 </title>
+  <title> 博客搭建 | efan的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +236,7 @@
             
             
               
-                个人博客搭建之Github篇
+                博客搭建
               
             
           </h1>
@@ -259,8 +259,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/11/个人博客搭建之Github篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/个人博客搭建之Github篇/" itemprop="commentsCount"></span>
+                <a href="/2016/03/11/个人博客搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/个人博客搭建/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,7 +282,9 @@
       
 
       
-        <p>其实搭建博客和git没什么太大关系，只要有github账号就可以了，但是既然提到了就简单了解一下git和github<br><a id="more"></a></p>
+        <p>第一次搭建博客，看了很多人的教程，也踩了一些坑啥的，简单记录一下博客搭建的流程，如果帮到几个人也算是回馈。<br><a id="more"></a></p>
+<h1 id="博客搭建步骤"><a href="#博客搭建步骤" class="headerlink" title="博客搭建步骤"></a>博客搭建步骤</h1><p>1) 新建一个Repository，命名为你的 name.github.io，其中name是你的用户名，例如我的用户名是efany，那么我建的Repository名称应该是 efany.github.io 。<br>2) 安装前需要安装两个两个应用程序，一个是Node.js（<a href="http://www.cnblogs.com/LonelyShadow/p/4310100.html" target="_blank" rel="external">教程</a>）,一个是<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a><br>3) 安装<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">hexo</a><br>4) 根据hexo的教程就可以搭建起来自己的博客了,现在你就发现你的博客和我的长的不一样，这是因为我换了一套主题<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next</a>。我建议有能力的人都用文档来解决问题，尽可能不要去找傻瓜教程，遇到问题再去找解决方法。</p>
+<h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><p>其实搭建博客和git没什么太大关系，只要有账号就可以了，但是既然提到了就简单了解一下git和github</p>
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><table>
 <thead>
 <tr>
@@ -317,14 +319,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="忽略特定的文件"><a href="#忽略特定的文件" class="headerlink" title="忽略特定的文件"></a>忽略特定的文件</h2><p>可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。<br>同时Git也提供了全局的配置，core.excludesfile。<br>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*.iml</span><br><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/.idea/workspace.xml</span><br><span class="line">/.idea/libraries</span><br><span class="line">.DS_Store</span><br><span class="line">/build</span><br><span class="line">/captures</span><br></pre></td></tr></table></figure>
+<h2 id="忽略特定的文件"><a href="#忽略特定的文件" class="headerlink" title="忽略特定的文件"></a>忽略特定的文件</h2><p>可以配置Git忽略特定的文件或者是文件夹。这些配置都放在.gitignore文件中。这个文件可以存在于不同的文件夹中，可以包含不同的文件匹配模式。为了让Git忽略bin文件夹，在主目录下放置.gitignore文件，其中内容为bin。<br>同时Git也提供了全局的配置，core.excludesfile。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*.iml</span><br><span class="line">.gradle</span><br><span class="line">/local.properties</span><br><span class="line">/.idea/workspace.xml</span><br><span class="line">/.idea/libraries</span><br><span class="line">.DS_Store</span><br><span class="line">/build</span><br><span class="line">/captures</span><br></pre></td></tr></table></figure></p>
 <p>具体的git教程参照<a href="http://blog.csdn.net/lishuo_os_ds/article/details/8078475#sec-1/" target="_blank" rel="external">GitHub详细教程</a></p>
-<h2 id="Android-Studio的git功能"><a href="#Android-Studio的git功能" class="headerlink" title="Android Studio的git功能"></a>Android Studio的git功能</h2><h6 id="1-注册github账号"><a href="#1-注册github账号" class="headerlink" title="1.注册github账号"></a>1.注册github账号</h6><p>自行百度 Google</p>
-<h6 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h6><p>地址：<a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a></p>
-<h6 id="2-匹配到AS"><a href="#2-匹配到AS" class="headerlink" title="2.匹配到AS"></a>2.匹配到AS</h6><p>File–&gt;Setting–&gt;Version Control–&gt;Git–&gt;PAth to Git executable:</p>
+<h2 id="Android-Studio的git功能"><a href="#Android-Studio的git功能" class="headerlink" title="Android Studio的git功能"></a>Android Studio的git功能</h2><h3 id="1-注册github账号"><a href="#1-注册github账号" class="headerlink" title="1.注册github账号"></a>1.注册github账号</h3><p>自行百度 Google</p>
+<h3 id="1-下载安装git"><a href="#1-下载安装git" class="headerlink" title="1.下载安装git"></a>1.下载安装git</h3><p>地址：<a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a></p>
+<h3 id="2-匹配到AS"><a href="#2-匹配到AS" class="headerlink" title="2.匹配到AS"></a>2.匹配到AS</h3><p>File–&gt;Setting–&gt;Version Control–&gt;Git–&gt;PAth to Git executable:</p>
 <p>注意是Git/bin/git.exe</p>
-<h6 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h6><ol>
+<h3 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h3><ol>
 <li>VCS–&gt;enable….–&gt;选择git</li>
 <li>右击工程（注意选到project目录模式）或者VCS–&gt;Git–&gt;add</li>
 <li>Git–&gt;commit Directory–&gt;选择要上传的文件</li>
@@ -353,8 +354,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/12/面试题Android学习笔记/" rel="prev" title="面试题Android学习笔记">
-                面试题Android学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/12/面试题Android学习笔记/" rel="prev" title="Android面试题学习笔记">
+                Android面试题学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -381,8 +382,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/11/个人博客搭建之Github篇/"
-           data-title="个人博客搭建之Github篇" data-url="http://yoursite.com/2016/03/11/个人博客搭建之Github篇/">
+      <div class="ds-thread" data-thread-key="2016/03/11/个人博客搭建/"
+           data-title="博客搭建" data-url="http://yoursite.com/2016/03/11/个人博客搭建/">
       </div>
     
   </div>
@@ -470,7 +471,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-number">1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略特定的文件"><span class="nav-number">2.</span> <span class="nav-text">忽略特定的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio的git功能"><span class="nav-number">3.</span> <span class="nav-text">Android Studio的git功能</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-注册github账号"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">1.注册github账号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-下载安装git"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">1.下载安装git</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-匹配到AS"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">2.匹配到AS</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-使用"><span class="nav-number">3.0.0.0.4.</span> <span class="nav-text">3.使用</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#博客搭建步骤"><span class="nav-number">1.</span> <span class="nav-text">博客搭建步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">2.</span> <span class="nav-text">github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-number">2.1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略特定的文件"><span class="nav-number">2.2.</span> <span class="nav-text">忽略特定的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio的git功能"><span class="nav-number">2.3.</span> <span class="nav-text">Android Studio的git功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-注册github账号"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.注册github账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载安装git"><span class="nav-number">2.3.2.</span> <span class="nav-text">1.下载安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-匹配到AS"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.匹配到AS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用"><span class="nav-number">2.3.4.</span> <span class="nav-text">3.使用</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
