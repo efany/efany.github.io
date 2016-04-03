@@ -61,16 +61,22 @@
 
 
 
-<meta name="description" content="1) 什么是注解2) 实现效果3) 代码实现4) 反射机制">
+<meta name="description" content="1) 什么是注解2) 实现效果3) 代码实现4) 反射机制         
+
+github地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android注解与反射机制">
 <meta property="og:url" content="http://yoursite.com/2016/04/02/Android注解与反射机制/index.html">
 <meta property="og:site_name" content="efan的个人博客">
-<meta property="og:description" content="1) 什么是注解2) 实现效果3) 代码实现4) 反射机制">
-<meta property="og:updated_time" content="2016-04-03T09:21:27.288Z">
+<meta property="og:description" content="1) 什么是注解2) 实现效果3) 代码实现4) 反射机制         
+
+github地址">
+<meta property="og:updated_time" content="2016-04-03T10:00:03.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android注解与反射机制">
-<meta name="twitter:description" content="1) 什么是注解2) 实现效果3) 代码实现4) 反射机制">
+<meta name="twitter:description" content="1) 什么是注解2) 实现效果3) 代码实现4) 反射机制         
+
+github地址">
 
 
 
@@ -284,7 +290,10 @@
       
 
       
-        <p>1) 什么是注解<br>2) 实现效果<br>3) 代码实现<br>4) 反射机制</p>
+        <p>1) 什么是注解<br>2) 实现效果<br>3) 代码实现<br>4) 反射机制         </p>
+<ul>
+<li><a href="https://github.com/efany/Annotate-Sample/" target="_blank" rel="external">github地址</a></li>
+</ul>
 <a id="more"></a>
 <h1 id="什么是注解"><a href="#什么是注解" class="headerlink" title="什么是注解"></a>什么是注解</h1><p>相信大家对于这行代码很熟悉了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br></pre></td></tr></table></figure></p>
 <p>但是肯定很多人都只是知道这行代码是重写父类方法的时候会用到，但并不知道它是什么。<br>其实这就是一种注解，可以理解成它标识了变量或者方法的某种属性。<br>那么看看它的具体实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Target(ElementType.METHOD)</span><br><span class="line">@Retention(RetentionPolicy.SOURCE)</span><br><span class="line">public @interface Override &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -312,7 +321,7 @@
 <p>getMethod中的第一个参数是methodname，第二个参数是参数类型集合，通过这两个参数得到要执行的Method。<br>method.invoke中的第一个参数是执行这个方法的对象，第二个参数是方法参数。执行该Method.invoke方法的参数是执行这个方法的对象owner，和参数数组args，可以这么理解：owner对象中带有参数args的method方法。返回值是Object，也既是该方法的返回值。<br>再次基础上还有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public Object invokeMethod(Object owner, String methodName, Object[] args) throws Exception &#123;  </span><br><span class="line">   </span><br><span class="line">     Class ownerClass = owner.getClass();  </span><br><span class="line">   </span><br><span class="line">     Class[] argsClass = new Class[args.length];  </span><br><span class="line">   </span><br><span class="line">     for (int i = 0, j = args.length; i &lt; j; i++) &#123;  </span><br><span class="line">         argsClass[i] = args[i].getClass();  </span><br><span class="line">     &#125;  </span><br><span class="line">  </span><br><span class="line">      Method method = ownerClass.getMethod(methodName,argsClass);  </span><br><span class="line">   </span><br><span class="line">     return method.invoke(owner, args);  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">public Object invokeStaticMethod(String className, String methodName,  </span><br><span class="line">             Object[] args) throws Exception &#123;  </span><br><span class="line">     Class ownerClass = Class.forName(className);  </span><br><span class="line">   </span><br><span class="line">     Class[] argsClass = new Class[args.length];  </span><br><span class="line">   </span><br><span class="line">     for (int i = 0, j = args.length; i &lt; j; i++) &#123;  </span><br><span class="line">         argsClass[i] = args[i].getClass();  </span><br><span class="line">     &#125;  </span><br><span class="line">   </span><br><span class="line">    Method method = ownerClass.getMethod(methodName,argsClass);  </span><br><span class="line">   </span><br><span class="line">     return method.invoke(null, args);  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>原理就是调用getMethod和method.invoke。</p>
 <blockquote>
-<p>我是电子科技大学大三的学生，做android一年了，最近再找实习</p>
+<p>我是电子科技大学大三的学生，做android一年了，最近在找实习</p>
 </blockquote>
 
       
